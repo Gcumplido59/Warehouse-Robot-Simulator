@@ -1,5 +1,3 @@
-# In robot.py
-
 class Robot:
     def __init__(self, fila, columna):
         self.fila = fila

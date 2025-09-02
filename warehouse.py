@@ -1,5 +1,3 @@
-# In warehouse.py
-
 class Almacen:
     def __init__(self, ancho, alto):
         self.ancho = ancho
