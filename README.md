@@ -71,7 +71,3 @@ Warehouse-Robot-Simulator/
 ├── robot.py             # Contains the Robot class
 └── package.py           # Contains the Package class
 ```
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
