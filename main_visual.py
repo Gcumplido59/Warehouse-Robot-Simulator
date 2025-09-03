@@ -1,37 +1,19 @@
 from warehouse import Almacen
 from robot import Robot
-from obstacle import Obstacle
-from package import Package
 from visualizer import Visualizer
 
 def main():
-
-    mi_almacen = Almacen(10, 5)
-    mi_robot = Robot(fila= 0, columna=1)
-    mi_paquete = Package(fila=2, columna=1)
-    obstaculos = [
-        Obstacle(fila=1, columna=3), Obstacle(fila=2, columna=3),
-        Obstacle(fila=3, columna=3), Obstacle(fila=3, columna=4),
-        Obstacle(fila=3, columna=5), Obstacle(fila=1, columna=0),
-        Obstacle(fila=1, columna=1), Obstacle(fila=1, columna=2),
-        Obstacle(fila=3, columna=6), Obstacle(fila=3, columna=7)
-    ]
-
+    # --- INITIAL SETUP ---
+    # Create an empty warehouse
+    mi_almacen = Almacen(10, 8)
+    
+    # Create the robot at a fixed starting position (0, 0)
+    mi_robot = Robot(fila=0, columna=0)
     mi_almacen.add_robot(mi_robot)
-    mi_almacen.add_package(mi_paquete)
-    for obs in obstaculos:
-        mi_almacen.place_object(obs, '🧱')
 
-    #LOGIC
-    print("Searching for a path...")
-    path = mi_almacen.find_path()
-
-    if path:
-        print("Path Found! Launching visualizer...")
-        app = Visualizer(almacen=mi_almacen, path=path)
-        app.run()
-    else:
-        print("No path could be found.")
+    # The visualizer now handles all the logic
+    app = Visualizer(almacen=mi_almacen)
+    app.run()
 
 if __name__ == '__main__':
     main()

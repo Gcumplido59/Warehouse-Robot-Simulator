@@ -58,7 +58,7 @@ class Almacen:
                     new_path = list(current_path)
                     new_path.append(neighbor_pos)
                     queue.append(new_path)
-    # Add this method inside the Almacen class
+
     def display_path(self, path):
         # Draw the path on the grid
         for pos in path:
@@ -68,6 +68,24 @@ class Almacen:
         self.display()
         # 8. If the loop finishes, no path was found
         return None
+
+    def reset(self):
+        # Clears the grid, leaving only the robot
+        self.package = None
+        for r in range(self.alto):
+            for c in range(self.ancho):
+                if (r, c) != (self.robot.fila, self.robot.columna):
+                    self.cuadricula[r][c] = '0'
+
+    # We modify add_package to also work with coordinates
+    def add_package(self, package_obj=None, fila=None, col=None):
+        if package_obj:
+            self.package = package_obj
+            self.cuadricula[package_obj.fila][package_obj.columna] = '📦'
+        elif fila is not None and col is not None:
+            from package import Package # Import locally
+            self.package = Package(fila, col)
+            self.cuadricula[fila][col] = '📦'
 
     def display(self):
         print("--- Almacén ---")
