@@ -72,4 +72,4 @@ Warehouse-Robot-Simulator/
 └── package.py           # Contains the Package class
 ```
 
-#Project made by Gael Cumplido
+Project made by Gael Cumplido
