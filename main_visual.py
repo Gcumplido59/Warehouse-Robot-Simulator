@@ -3,7 +3,6 @@ from robot import Robot
 from visualizer import Visualizer
 
 def main():
-    # --- INITIAL SETUP ---
     # Create an empty warehouse
     mi_almacen = Almacen(10, 8)
     
