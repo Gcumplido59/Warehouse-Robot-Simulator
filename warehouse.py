@@ -1,4 +1,3 @@
-# In warehouse.py
 from collections import deque
 
 class Almacen:

@@ -1,4 +1,3 @@
-# In main_visual.py
 from warehouse import Almacen
 from robot import Robot
 from obstacle import Obstacle
@@ -6,7 +5,7 @@ from package import Package
 from visualizer import Visualizer
 
 def main():
-    # --- SETUP (Same as before) ---
+
     mi_almacen = Almacen(10, 5)
     mi_robot = Robot(fila= 0, columna=1)
     mi_paquete = Package(fila=2, columna=1)
@@ -23,13 +22,12 @@ def main():
     for obs in obstaculos:
         mi_almacen.place_object(obs, '🧱')
 
-    # --- LOGIC (Same as before) ---
+    #LOGIC
     print("Searching for a path...")
     path = mi_almacen.find_path()
 
     if path:
         print("Path Found! Launching visualizer...")
-        # --- VISUALIZATION ---
         app = Visualizer(almacen=mi_almacen, path=path)
         app.run()
     else:

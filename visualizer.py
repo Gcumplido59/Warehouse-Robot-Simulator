@@ -1,6 +1,6 @@
 import pygame
 
-# --- Constants ---
+# Constants
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (200, 200, 200)
