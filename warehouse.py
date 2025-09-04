@@ -140,7 +140,7 @@ class Warehouse:
             self.package = package_obj
             self.grid[package_obj.row][package_obj.column] = '📦'
         elif row is not None and col is not None:
-            from package import Package # Import locally to avoid circular dependency
+            from package import Package # Import locally to avoid unnecessary top-level import
             self.package = Package(row, col)
             self.grid[row][col] = '📦'
 
