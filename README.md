@@ -62,14 +62,16 @@ The application will launch in "Setup Mode."
 
 ## Project Structure
 
-The project is organized using Object-Oriented principles to separate logic from visualization.
+The project is organized using Object-Oriented principles to separate logic from visualization. Each class has a distinct responsibility:
+
 ```
 Warehouse-Robot-Simulator/
-├── main_visual.py       # Main entry point for the Pygame application
-├── visualizer.py        # Contains the Visualizer class for Pygame rendering
-├── warehouse.py         # Contains the Almacen (Warehouse) class and BFS logic
-├── robot.py             # Contains the Robot class
-└── package.py           # Contains the Package class
+├── main_visual.py       # Main entry point for the Pygame application.
+├── visualizer.py        # Handles all Pygame rendering and user input.
+├── warehouse.py         # Manages the grid, objects, and pathfinding logic (BFS).
+├── robot.py             # Represents the robot.
+├── package.py           # Represents the package to be collected.
+└── obstacle.py          # Represents an obstacle on the grid.
 ```
 
 Project made by Gael Cumplido
